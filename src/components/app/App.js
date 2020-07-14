@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import './App.css';
-import Business from '../business/Business'
+import BusinessList from '../businessList/BusinessList'
+import SearchBar from '../searchBar/SearchBar'
+
+const business = [
+  {
+    imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'Rachels Pizzeria',
+    address: '101 Paddington Way',
+    city: 'Flavortown',
+    state: 'NY',
+    zipCode: '10101',
+    category: 'Italian',
+    rating: 4.5,
+    reviewCount: 90
+  },
+  {
+    imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'MarginOttos Pizzeria',
+    address: '1231 Paddington Way',
+    city: 'Pizzatown',
+    state: 'CA',
+    zipCode: '90210',
+    category: 'Pizza',
+    rating: 4.6,
+    reviewCount: 922
+  },
+  {
+    imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'Marks Pizzeria',
+    address: '1111 Paddington Way',
+    city: 'Flavortown',
+    state: 'NY',
+    zipCode: '10101',
+    category: 'Italian',
+    rating: 4.5,
+    reviewCount: 90
+  },
+]
+
+const businesses = business.map(bus => bus)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Business />
-      </header>
+      <h1>rávenous</h1>
+      <SearchBar />
+      <BusinessList businesses={businesses}/>
     </div>
   );
 }
