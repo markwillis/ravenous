@@ -41,11 +41,15 @@ const business = [
 
 const businesses = business.map(bus => bus)
 
-function App() {
+function App(props) {
+  const searchYelp = (term, location, sortBy) => {
+    console.log(`Searching Yelp for ${term}, in ${location}, sorted by: ${sortBy}`)
+  }
+
   return (
     <div className="App">
       <h1>rávenous</h1>
-      <SearchBar />
+      <SearchBar searchYelp={searchYelp}/>
       <BusinessList businesses={businesses}/>
     </div>
   );

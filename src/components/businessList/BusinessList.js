@@ -5,6 +5,7 @@ import Business from '../business/Business'
 const BusinessList = props => {
   const businessList = props.businesses.map(bus => (
     <Business 
+      key={bus.name}
       name={bus.name}
       imageSrc={bus.imageSrc}
       address={bus.address}
